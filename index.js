@@ -2,7 +2,6 @@
 /* global mapboxgl */
 
 var mapboxgl = require('mapbox-gl')
-var extend = require('xtend');
 
 // Polyfill some useful functions and drop some
 // dependencies.
@@ -51,7 +50,7 @@ if (typeof Object.assign != 'function') {
  * @return {Flash} `this`
  */
 function Flash(options) {
-  this.options = extend({}, this.options, options);
+  this.options = Object.assign({}, this.options, options);
   return this
 }
 
