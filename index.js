@@ -84,6 +84,7 @@ Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
       // that's probably a lot of repainting.
       if(Number.isSafeInteger(e.detail.fadeout)){
         clearTimeout(message)
+        message.style.transitionDuration = '0s'
 	message.style.transitionProperty = ''
 	message.style.opacity = 1;
 
@@ -91,7 +92,7 @@ Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
 	  message.style.transitionDuration = e.detail.fadeout + 's'
 	  message.style.transitionProperty = 'opacity'
 	  message.style.opacity = 0
-        }) // Omitting the delay arg to setTimeout defaults to 0
+        }, 700)
       } else {
 	message.classList.remove(flash.options.fadeoutClass)
       }
