@@ -40,6 +40,5 @@
     "mapbox-gl": ">0.13.0"
   },
   "dependencies": {
-    "mapbox": "^0.12.0"
   }
 }
