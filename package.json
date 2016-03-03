@@ -25,19 +25,19 @@
   },
   "homepage": "https://github.com/sleepycat/mapbox-gl-flash#readme",
   "devDependencies": {
-    "browserify": "^11.2.0",
-    "budo": "^7.0.2",
-    "documentation": "^3.0.0",
+    "browserify": "^13.0.0",
+    "budo": "^8.0.4",
+    "documentation": "^4.0.0-beta",
     "envify": "^3.4.0",
-    "eslint": "^1.10.3",
-    "lodash.once": "^3.0.1",
-    "smokestack": "^3.3.1",
+    "eslint": "^2.2.0",
+    "lodash.once": "^4.0.0",
+    "smokestack": "^3.4.1",
     "tap-status": "^1.0.1",
-    "tape": "^4.2.0",
-    "uglify-js": "^2.4.24"
+    "tape": "^4.5.0",
+    "uglify-js": "^2.6.2"
   },
   "peerDependencies": {
-    "mapbox-gl": "^0.13.1 || ^0.14.0"
+    "mapbox-gl": ">0.13.0"
   },
   "dependencies": {
     "mapbox": "^0.12.0"
