@@ -56,9 +56,7 @@ function Flash(options) {
 
 Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
 
-  options: {
-    position: 'top-left'
-  },
+  options: {},
 
   onAdd: function(map) {
     var flash = this;
@@ -117,9 +115,6 @@ Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
     el.appendChild(message);
 
     this.container.appendChild(el);
-
-    // Override the control being added to control containers
-    if (this.options.container) this.options.position = false;
 
     return el;
   }
