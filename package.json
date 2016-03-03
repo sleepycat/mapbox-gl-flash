@@ -1,0 +1,45 @@
+{
+  "name": "mapbox-gl-flash",
+  "version": "1.0.0",
+  "description": "A flash message for Mapbox GL JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo example/index.js --serve=example/bundle.js --live -d",
+    "build": "NODE_ENV=production && browserify index.js | uglifyjs -c -m > dist/mapbox-gl-flash.js",
+    "test": "npm run lint && browserify -t envify test/index.js | smokestack -b firefox | tap-status",
+    "docs": "documentation index.js --format=md > API.md",
+    "lint": "eslint --no-eslintrc -c .eslintrc index.js src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sleepycat/mapbox-gl-flash.git"
+  },
+  "keywords": [
+    "flash",
+    "mapbox-gl-js"
+  ],
+  "author": "Mike Williamson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sleepycat/mapbox-gl-flash/issues"
+  },
+  "homepage": "https://github.com/sleepycat/mapbox-gl-flash#readme",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "budo": "^7.0.2",
+    "documentation": "^3.0.0",
+    "envify": "^3.4.0",
+    "eslint": "^1.10.3",
+    "lodash.once": "^3.0.1",
+    "smokestack": "^3.3.1",
+    "tap-status": "^1.0.1",
+    "tape": "^4.2.0",
+    "uglify-js": "^2.4.24"
+  },
+  "peerDependencies": {
+    "mapbox-gl": "^0.13.1 || ^0.14.0"
+  },
+  "dependencies": {
+    "mapbox": "^0.12.0"
+  }
+}
