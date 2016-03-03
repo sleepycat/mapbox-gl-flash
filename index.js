@@ -91,7 +91,7 @@ Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
 	  message.style.transitionDuration = e.detail.fadeout + 's'
 	  message.style.transitionProperty = 'opacity'
 	  message.style.opacity = 0
-        }, 1000)
+        }) // Omitting the delay arg to setTimeout defaults to 0
       } else {
 	message.classList.remove(flash.options.fadeoutClass)
       }
