@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-flash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A flash message for Mapbox GL JS",
   "main": "index.js",
   "scripts": {
