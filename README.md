@@ -2,7 +2,16 @@
 
 This plugin creates a flash message on your [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js) map.
 
+![Screenshot of flash
+notification](https://mikewilliamson.files.wordpress.com/2016/03/flash-message3.jpg?w=906)
+
 ## Usage
+
+### Install
+
+```bash
+npm install --save mapbox-gl-flash
+```
 
 ### Getting it set up
 
@@ -63,11 +72,12 @@ dispatchEvent('mapbox.setflash', {message: "bar", error: true, fadeout: 3})
 Info, warn and error are all valid classes that can be added with
 <whatever>:true.
 
+For further details take a look at the accompanying [blog
+post](https://mikewilliamson.wordpress.com/2016/03/04/flash-messages-for-mapbox-gl-js/).
+
 ### TODO
 
-* Some code cleanup
 * tests for the fadeout function
-* release on npm
 
 ## Contributing
 
