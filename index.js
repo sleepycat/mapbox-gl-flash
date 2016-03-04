@@ -76,37 +76,44 @@ Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
 
     var message = document.createElement('p');
     message.className = 'flash-message';
+    message.style.display = 'none'
 
     document.addEventListener('mapbox.setflash', function(e){
-      //TODO: look into the performance of this.
-      // that's probably a lot of repainting.
-      if(Number.isSafeInteger(e.detail.fadeout)){
-        clearTimeout(message)
-	message.style.opacity = 1;
+      // TODO: break this into smaller functions
+      if(e.detail.message === ''){
+        message.style.display = 'none'
 
-        setTimeout(function(){
-	  message.style.transitionDuration = e.detail.fadeout + 's'
-	  message.style.transitionProperty = 'opacity'
-	  message.style.opacity = 0
-        }, 1000)
       } else {
-	message.classList.remove(flash.options.fadeoutClass)
-      }
-      message.textContent = e.detail.message
-      if(e.detail.info){
-	message.classList.add('info')
-	message.classList.remove('warn')
-	message.classList.remove('error')
-      }
-      if(e.detail.warn){
-	message.classList.add('warn')
-	message.classList.remove('info')
-	message.classList.remove('error')
-      }
-      if(e.detail.error){
-	message.classList.add('error')
-	message.classList.remove('info')
-	message.classList.remove('warn')
+        // set the message
+        message.textContent = e.detail.message
+        message.style.display = 'block'
+        // In case it's been called with a class previously
+        message.classList.remove('warn', 'info', 'error')
+        if(Number.isSafeInteger(e.detail.fadeout)){
+          clearTimeout(message)
+          message.style.transitionDuration = '0.5s'
+          message.style.opacity = 1;
+
+          setTimeout(function(){
+            message.style.transitionDuration = e.detail.fadeout + 's'
+            message.style.transitionProperty = 'opacity'
+            message.style.opacity = 0
+          }, 1000)
+        } else {
+          // In case it's been called with fadeout previously
+          message.style.transitionDuration = '0s'
+          message.style.transitionProperty = 'opacity'
+          message.style.opacity = 1;
+        }
+        if(e.detail.info){
+          message.classList.add('info')
+        }
+        if(e.detail.warn){
+          message.classList.add('warn')
+        }
+        if(e.detail.error){
+          message.classList.add('error')
+        }
       }
     })
 
