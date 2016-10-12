@@ -127,7 +127,7 @@ Flash.prototype = mapboxgl.util.inherit(mapboxgl.Control, {
 });
 
 if (window.mapboxgl) {
-  mapboxgl.Flash = Flash;
+  window.mapboxgl.Flash = Flash;
 } else if (typeof module !== 'undefined') {
   module.exports = Flash;
 }
