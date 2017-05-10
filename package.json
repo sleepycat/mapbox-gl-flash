@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-flash",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A flash message for Mapbox GL JS",
   "main": "index.js",
   "scripts": {
@@ -25,19 +25,19 @@
   },
   "homepage": "https://github.com/sleepycat/mapbox-gl-flash#readme",
   "devDependencies": {
-    "browserify": "^13.0.0",
-    "budo": "^8.0.4",
-    "documentation": "^4.0.0-beta",
-    "envify": "^3.4.0",
-    "eslint": "^2.2.0",
-    "lodash.once": "^4.0.0",
+    "browserify": "^14.3.0",
+    "budo": "^10.0.3",
+    "documentation": "^4.0.0-rc.1",
+    "envify": "^4.0.0",
+    "eslint": "^3.19.0",
+    "lodash.once": "^4.1.1",
     "smokestack": "^3.4.1",
     "tap-status": "^1.0.1",
-    "tape": "^4.5.0",
-    "uglify-js": "^2.6.2"
+    "tape": "^4.6.3",
+    "uglify-js": "^3.0.3"
   },
   "peerDependencies": {
-    "mapbox-gl": ">=0.13.0"
+    "mapbox-gl": ">=0.30.0"
   },
   "dependencies": {
   }
